@@ -4,7 +4,7 @@ import axios from 'axios'
 import "./App.css";
 
 function App() {
-  const [dataset, setDataset] = useState('');
+  const [dataset, setDataset] = useState({});
   useEffect(() => {
     axios
       .get('https://api.nasa.gov/planetary/apod?api_key=ylTXo3afm0F48HuOGHXymi9HYMrvlzJ7TY1Qu1Po')
@@ -16,10 +16,6 @@ function App() {
 
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
       <PhotoCard date={dataset.date} explanation={dataset.explanation} 
                  title={dataset.title} url={dataset.url}/>
     </div>
