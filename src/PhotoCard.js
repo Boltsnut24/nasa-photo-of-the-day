@@ -1,38 +1,48 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import imgT from './telescope.png';
 const CardStyle = styled.div`
   font-size: 2em;
-  background-color: gray;
+  background-color: lightgrey;
+  width: 75%;
+  margin: auto;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 `;
-
-const Header = styled.h2`
-   color: purple;
-   height: 80px;
-   background-color: lightgrey;
-   margin-top: 0px;
-`;
+const Title = styled.h2`
+  margin-bottom: 0px;
+`
+const Date=styled.p`
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: .75em;
+`
 
 const Image = styled.img`
-  border-radius: 100%;
-  display: block;
+  width: 80%;
+  display: flex;
+  margin: auto;
+  margin-bottom: 10px;
 `;
 
-const bodyText = styled.p`
-  width: 800px;
+const BodyText = styled.p`
+  width: 80%;
   background-color: lightgrey;
   margin: auto;
+  text-align: left;
 `;
 
 function PhotoCard(prop) {
   console.log(prop)
   return (
     <CardStyle>
-      <Header>{prop.title}</Header>
+  
+      <Title>{prop.title}</Title>
+      <Date>{prop.date}</Date>
       <Image src={prop.url} alt="Photo of the day"></Image>
-      <img src = "src\telescope.png" alt ="Telescope"></img>
-      <bodyText>{prop.explanation}</bodyText>
-      <p>{prop.date}</p>
+      <BodyText>{prop.explanation}</BodyText>
+      
     </CardStyle>
   )
 }
